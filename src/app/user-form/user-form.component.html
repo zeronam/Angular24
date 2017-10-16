@@ -1,0 +1,32 @@
+<input placeholder="Input name" [(ngModel)]="name" />
+<h3 [style.color]="isHighLight ? 'red' : 'blue'">Your name: {{ name }}</h3>
+<!-- <h3 [style.color]="name.length % 2 === 0 ? 'red' : 'blue'">Your name: {{ name }}</h3> -->
+<!-- <h3 [ngStyle]="name.length % 2 === 0 ? evenStyle : oddStyle">Your name: {{ name }}</h3> -->
+<h3 [ngClass]="currentClass"></h3>
+<ul>
+  <li *ngFor="let object of arrObject">{{ 'Subject: ' + object }}</li>
+</ul>
+<div *ngIf="isShowForm">
+<input placeholder="English" [(ngModel)]="newEn" />
+<input placeholder="VietNam" [(ngModel)]="newVn" />
+<button (click)="addWord()">Add</button>
+</div>
+<button (click)="isShowForm = true" *ngIf="!isShowForm">Add</button>
+<select [(ngModel)]="filterStatus">
+  <option value="viewall">View all</option>
+  <option value="viewgreen">View green</option>
+  <option value="viewred">View red</option>
+</select>
+
+<div *ngFor="let word of arrWords">
+  <div class="bgWord" *ngIf="showStatusFilter(word.memorized)">
+  <h4 [ngStyle]="{color: word.memorized ? 'green': 'red'}">{{word.en}}</h4>
+  <p>{{word.vn}}</p>
+  <button (click)="removeWord(word.id)">Delete</button>
+  <button (click)="word.memorized = !word.memorized">{{word.memorized ? 'da thuoc' : "chua thuoc"}}</button>
+</div>
+</div>
+
+<div *ngFor="let book of arrBooks">
+  <app-books [name]="book.name" [age]="book.price"></app-books>
+</div>
