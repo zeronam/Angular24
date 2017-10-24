@@ -13,7 +13,6 @@ export class WeatherService {
     return this.http.get(url)
     .toPromise()
     .then(res => res.json())
-    .then(resJson => resJson.main.temp)
-    .catch(err => console.log(err));
+    .then(resJson => resJson.main.temp);
   }
 }

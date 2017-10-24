@@ -22,8 +22,15 @@ export class WeatherComponent implements OnInit {
   weatherSelect(){
     this.isLoading = true;
     this.weatherService.getTemp(this.txtcityName)
-    .then( temp => {this.cityName = this.txtcityName; this.tempNum = temp; this.isLoading = false} )
-    .catch(err => {alert('Can not find the city!!!'); this.txtcityName = ''; this.isLoading = false; this.cityName = ''});
+    .then( temp => {
+    this.cityName = this.txtcityName;
+    this.tempNum = temp;
+    this.isLoading = false} )
+    .catch(err => {
+    alert('Can not find the city!!!');
+    this.txtcityName = '';
+    this.isLoading = false;
+    this.cityName = ''});
   }
 
   getMessage(){

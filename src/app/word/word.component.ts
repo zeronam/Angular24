@@ -12,7 +12,6 @@ export class WordComponent implements OnInit{
 
   }
   ngOnInit(){
-
   }
   showKey(event){
     this.name = event.target.value;
