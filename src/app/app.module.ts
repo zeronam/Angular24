@@ -22,7 +22,7 @@ import {WeatherComponent} from './weather/weather.component';
 import {AppRoutingModule} from './app-routing.module';
 import {SigninComponent} from './signin.component';
 import {SignupComponent} from './signup.component';
-// import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { ListitemComponent } from './listitem/listitem.component';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import {SignupComponent} from './signup.component';
     WeatherComponent,
     SigninComponent,
     SignupComponent,
-    // PageNotFoundComponent
+    ListitemComponent
   ],
   imports: [
     BrowserModule,
